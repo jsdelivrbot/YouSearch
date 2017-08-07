@@ -1,5 +1,22 @@
-//import React,{component} from 'react';
-//
-//const VideoListItem=(props)=>{
-//	return <li>Video</li>
-//};
+import React from 'react';
+
+const VideoListItems=({video,onVideoSelect}) => {
+  console.log(video);
+  return (
+    <li onClick={()=>onVideoSelect(video)} className='list-group-item'>
+      <div className='video-list media'>
+        <div className='media-left'>
+          <img className='media-object' src={video.snippet.thumbnails.default.url}/>
+        </div>
+        
+        <div className='media-body'>
+          <div className='media-heading'>
+            {video.snippet.title}
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+};
+
+export default VideoListItems;
